@@ -55,10 +55,11 @@ let rewardEarned = function(){
 
 cleanRoom().then(function(message){
   console.log(message)
-      removeGarbage().then(function(message){
-        console.log(message)
-          rewardEarned().then(function(message){
-            console.log(message)
-})
-  })
+      return removeGarbage()
+    }).then(function(message){
+      console.log(message)
+      return rewardEarned()
+    }).then(function(message){
+      console.log(message)
+      console.log("Well Done!")
     })
